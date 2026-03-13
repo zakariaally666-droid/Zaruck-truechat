@@ -1,0 +1,17 @@
+name: Build Android APK
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install Expo CLI
+        run: npm install --global expo-cli
+      - name: Install Dependencies
+        run: npm install firebase react-native react-native-web
+      - name: Success Message
+        run: echo "Hongera Ozu! Mfumo wa kupika App yako umeanza kazi."
